@@ -1,13 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl4opmppa743d"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_g3i12"]
-[ext_resource type="Texture2D" uid="uid://bcnjxsjxlwg0s" path="res://assets/png/element_blue_rectangle_glossy.png" id="1_x4xft"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_02alk"]
+load_path = "res://.godot/imported/element_blue_rectangle_glossy.png-e88e9412cb56b51817e3f47950b1d17b.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m272n"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x4xft")
+"texture": SubResource("CompressedTexture2D_02alk")
 }],
 "loop": true,
 "name": &"idel",

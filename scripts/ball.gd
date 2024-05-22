@@ -8,8 +8,8 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		velocity = velocity.rotated(deg_to_rad(randf_range(-10, 10)))
 		
-		if collision.get_collider().has_method('break_block'):
-			collision.get_collider().break_block()
+		if collision.get_collider().has_method('hit_by_ball'):
+			collision.get_collider().hit_by_ball()
 	
 func start(_position, _direction = 0):
 	position = _position

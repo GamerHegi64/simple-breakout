@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var collision_shape_2d = $CollisionShape2D
 
-func break_block():
+func hit_by_ball():
 	queue_free()
 	
 func start(_position):

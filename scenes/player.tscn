@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d03n2xrcyq1qv"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4urfv"]
-[ext_resource type="Texture2D" uid="uid://b5uac8y7l8vu7" path="res://assets/png/paddleRed.png" id="2_dgefm"]
-[ext_resource type="Texture2D" uid="uid://cas71itbvxd5u" path="res://assets/png/paddleBlu.png" id="3_xumh1"]
+[ext_resource type="Texture2D" uid="uid://b5uac8y7l8vu7" path="res://assets/paddleRed.png" id="2_dgefm"]
+[ext_resource type="Texture2D" uid="uid://cas71itbvxd5u" path="res://assets/paddleBlu.png" id="3_xumh1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_076tb"]
 animations = [{

@@ -17,15 +17,13 @@ ball_scene = ExtResource("4_e2gj1")
 [node name="Player" parent="." instance=ExtResource("2_tej0t")]
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(360, 440)
 script = ExtResource("4_jqgp1")
 
 [node name="BallSpawner" type="Marker2D" parent="."]
-position = Vector2(360, 300)
 script = ExtResource("5_iqoob")
 
 [node name="BlockSpawnMarker" type="Marker2D" parent="."]
-position = Vector2(360, 80)
+position = Vector2(1, -2)
 script = ExtResource("6_ghycq")
 
 [node name="Walls" type="Node" parent="."]
@@ -33,12 +31,11 @@ script = ExtResource("6_ghycq")
 [node name="LeftWall" parent="Walls" instance=ExtResource("5_38pps")]
 
 [node name="RightWall" parent="Walls" instance=ExtResource("5_38pps")]
-position = Vector2(702, 240)
 wall_pos = 1
 
 [node name="TopWall" parent="Walls" instance=ExtResource("5_38pps")]
-position = Vector2(717, 3840)
-scale = Vector2(1, 225)
+position = Vector2(-229, -234)
+scale = Vector2(0.004, 1)
 wall_pos = 2
 
 [node name="BlockSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_marker")]

@@ -1,14 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://uu74ib2appxn"]
 
-[ext_resource type="Texture2D" uid="uid://bv51sfkp2v2ql" path="res://assets/png/ballBlue.png" id="1_l6dee"]
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_n5fjs"]
-[ext_resource type="Texture2D" uid="uid://bbcbso3cevfi6" path="res://assets/png/ballGrey.png" id="2_nhmnt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oln1a"]
+load_path = "res://.godot/imported/ballBlue.png-53024ac0ca77b4fa354432218b58b004.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1s41q"]
+load_path = "res://.godot/imported/ballGrey.png-e78c9a88ec74cb0ec02a63155bc6e80a.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3byh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_l6dee")
+"texture": SubResource("CompressedTexture2D_oln1a")
 }],
 "loop": true,
 "name": &"charged",
@@ -16,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nhmnt")
+"texture": SubResource("CompressedTexture2D_1s41q")
 }],
 "loop": true,
 "name": &"idle",
