@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl4opmppa743d"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_g3i12"]
+[ext_resource type="Texture2D" uid="uid://bcnjxsjxlwg0s" path="res://assets/png/element_blue_rectangle_glossy.png" id="1_x4xft"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m272n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x4xft")
+}],
+"loop": true,
+"name": &"idel",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cajys"]
+size = Vector2(96, 32)
+
+[node name="Block" type="StaticBody2D" groups=["reflect_hor"]]
+script = ExtResource("1_g3i12")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1)
+sprite_frames = SubResource("SpriteFrames_m272n")
+animation = &"idel"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cajys")

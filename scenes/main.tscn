@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://bc7yobmd3j31j"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_58yhy"]
+[ext_resource type="PackedScene" uid="uid://bl4opmppa743d" path="res://scenes/block.tscn" id="2_ayc63"]
+[ext_resource type="PackedScene" uid="uid://d03n2xrcyq1qv" path="res://scenes/player.tscn" id="2_tej0t"]
+[ext_resource type="PackedScene" uid="uid://uu74ib2appxn" path="res://scenes/ball.tscn" id="4_e2gj1"]
+[ext_resource type="Script" path="res://scripts/PlayerSpawn.gd" id="4_jqgp1"]
+[ext_resource type="PackedScene" uid="uid://ughm0x3i2gdm" path="res://scenes/wall.tscn" id="5_38pps"]
+[ext_resource type="Script" path="res://scripts/BallSpawner.gd" id="5_iqoob"]
+[ext_resource type="Script" path="res://scripts/BlockSpawnMarker.gd" id="6_ghycq"]
+[ext_resource type="Script" path="res://scripts/BlockSpawner.gd" id="7_ml83w"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_58yhy")
+ball_scene = ExtResource("4_e2gj1")
+
+[node name="Player" parent="." instance=ExtResource("2_tej0t")]
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(360, 440)
+script = ExtResource("4_jqgp1")
+
+[node name="BallSpawner" type="Marker2D" parent="."]
+position = Vector2(360, 300)
+script = ExtResource("5_iqoob")
+
+[node name="BlockSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(360, 80)
+script = ExtResource("6_ghycq")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="LeftWall" parent="Walls" instance=ExtResource("5_38pps")]
+
+[node name="RightWall" parent="Walls" instance=ExtResource("5_38pps")]
+position = Vector2(702, 240)
+wall_pos = 1
+
+[node name="TopWall" parent="Walls" instance=ExtResource("5_38pps")]
+position = Vector2(717, 3840)
+scale = Vector2(1, 225)
+wall_pos = 2
+
+[node name="BlockSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_marker")]
+script = ExtResource("7_ml83w")
+block_scene = ExtResource("2_ayc63")
+spawn_marker = NodePath("../BlockSpawnMarker")
