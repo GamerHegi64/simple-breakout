@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b620jpoinsukk"
-path="res://.godot/imported/platformPack_tile040.png-5ab4d51390dad2cf241525334ceded91.ctex"
+uid="uid://b42qej3b2ga0v"
+path="res://.godot/imported/red_panel.png-bcaf6033a68ab89cc26b9938802d19c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/platformPack_tile040.png"
-dest_files=["res://.godot/imported/platformPack_tile040.png-5ab4d51390dad2cf241525334ceded91.ctex"]
+source_file="res://assets/ui/red_panel.png"
+dest_files=["res://.godot/imported/red_panel.png-bcaf6033a68ab89cc26b9938802d19c7.ctex"]
 
 [params]
 

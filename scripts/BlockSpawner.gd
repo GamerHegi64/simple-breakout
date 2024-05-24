@@ -1,8 +1,10 @@
 extends Node
 
+signal no_blocks
+
 @export var block_scene: PackedScene
 @export var spawn_marker: Marker2D
-@export var cols = 10
+@export var cols = 8
 @export var rows = 6
 @export var col_gap = 10
 @export var row_gap = 15
@@ -32,3 +34,7 @@ func spawn_grid():
 		spawn_position.y += row_gap + block_height
 		_spawn_position = spawn_position
 
+func _process(delta):
+	if get_child_count() <= 0:
+		no_blocks.emit()
+		

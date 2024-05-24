@@ -30,7 +30,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4uo1g"]
 radius = 11.0454
 
-[node name="Ball" type="CharacterBody2D"]
+[node name="Ball" type="CharacterBody2D" groups=["ball"]]
 script = ExtResource("1_n5fjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

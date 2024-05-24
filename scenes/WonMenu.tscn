@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=3 uid="uid://bipgfd7hkjkmt"]
+
+[ext_resource type="Script" path="res://scripts/LostMenu.gd" id="1_ug7i2"]
+[ext_resource type="Texture2D" uid="uid://c5gxu766jbnvc" path="res://assets/ui/green_panel.png" id="2_2jkgb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1h10r"]
+texture = ExtResource("2_2jkgb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ntvi"]
+font_size = 42
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lk65j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sty3e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhd83"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e2d3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ek4k5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tenqn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqdlb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0sfea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4qyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_keepw"]
+
+[node name="WonMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ug7i2")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = -164.5
+offset_top = -133.0
+offset_right = 164.5
+offset_bottom = 133.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1h10r")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "You Won"
+label_settings = SubResource("LabelSettings_0ntvi")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lk65j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sty3e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bhd83")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4e2d3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ek4k5")
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tenqn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vqdlb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0sfea")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j4qyj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_keepw")
+text = "menu"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc7yobmd3j31j"]
+[gd_scene load_steps=14 format=3 uid="uid://bc7yobmd3j31j"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_58yhy"]
 [ext_resource type="PackedScene" uid="uid://bl4opmppa743d" path="res://scenes/block.tscn" id="2_ayc63"]
@@ -9,6 +9,11 @@
 [ext_resource type="Script" path="res://scripts/BallSpawner.gd" id="5_iqoob"]
 [ext_resource type="Script" path="res://scripts/BlockSpawnMarker.gd" id="6_ghycq"]
 [ext_resource type="Script" path="res://scripts/BlockSpawner.gd" id="7_ml83w"]
+[ext_resource type="Script" path="res://scripts/LosingArea.gd" id="10_bn8uk"]
+[ext_resource type="PackedScene" uid="uid://6xly1goyud85" path="res://scenes/LostMenu.tscn" id="11_3512u"]
+[ext_resource type="PackedScene" uid="uid://bipgfd7hkjkmt" path="res://scenes/WonMenu.tscn" id="12_2ne1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jqim"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_58yhy")
@@ -19,7 +24,7 @@ ball_scene = ExtResource("4_e2gj1")
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 script = ExtResource("4_jqgp1")
 
-[node name="BallSpawner" type="Marker2D" parent="."]
+[node name="BallSpawn" type="Marker2D" parent="."]
 script = ExtResource("5_iqoob")
 
 [node name="BlockSpawnMarker" type="Marker2D" parent="."]
@@ -42,3 +47,18 @@ wall_pos = 2
 script = ExtResource("7_ml83w")
 block_scene = ExtResource("2_ayc63")
 spawn_marker = NodePath("../BlockSpawnMarker")
+
+[node name="LosingArea" type="Area2D" parent="."]
+script = ExtResource("10_bn8uk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LosingArea"]
+shape = SubResource("RectangleShape2D_7jqim")
+
+[node name="LostMenu" parent="." instance=ExtResource("11_3512u")]
+top_level = true
+
+[node name="WonMenu" parent="." instance=ExtResource("12_2ne1t")]
+top_level = true
+
+[connection signal="no_blocks" from="BlockSpawner" to="." method="_on_block_spawner_no_blocks"]
+[connection signal="body_entered" from="LosingArea" to="." method="_on_losing_area_body_entered"]
