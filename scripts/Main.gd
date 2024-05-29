@@ -45,7 +45,6 @@ func won_game():
 	won_menu.show()
 
 func _on_losing_area_body_entered(body):
-	print("area enter lose: " + body.name)
 	if body.is_in_group('ball'):
 		lost_game()
 

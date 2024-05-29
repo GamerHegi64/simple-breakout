@@ -24,7 +24,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cajys"]
 size = Vector2(96, 32)
 
-[node name="Block" type="StaticBody2D" groups=["reflect_hor"]]
+[node name="Block" type="StaticBody2D" groups=["block"]]
 script = ExtResource("1_g3i12")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

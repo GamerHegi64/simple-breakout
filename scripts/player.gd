@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var animated_sprite = $AnimatedSprite2D
 @export var speed = 500
 var can_move = false
 
@@ -14,7 +15,7 @@ func proces_controll(delta):
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		
-	move_and_collide(velocity * delta * speed)
+	move_and_collide(velocity * delta * speed)#
 
 func set_pos(_position):
 	position = _position
@@ -25,4 +26,6 @@ func start():
 func stop():
 	can_move = false
 
-	
+func hit_by_ball():
+	animated_sprite.play("bounce")
+

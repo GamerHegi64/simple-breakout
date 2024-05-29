@@ -9,10 +9,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_dgefm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xumh1")
 }],
-"loop": true,
+"loop": false,
 "name": &"bounce",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -26,13 +29,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijuub"]
 size = Vector2(95.5, 23)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 disable_mode = 1
 script = ExtResource("1_4urfv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_076tb")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ijuub")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
